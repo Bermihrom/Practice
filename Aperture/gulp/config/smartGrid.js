@@ -4,7 +4,7 @@ const settings = {
     columns: 12,
     offset: '15px',
     wrapper: {
-        maxWidth: '960px',
+        maxWidth: '1400px',
         fields: '30px',
     },
     breakPoints: {

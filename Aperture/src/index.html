@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <link rel="stylesheet" href="styles/main.min.css">
-  @@include('html/head.html', {
+  @@include('html/parts/head.html', {
     "title": "Aperture"
   })
 
@@ -9,11 +9,25 @@
   <!-- @@include('html/grid.html', {}) -->
 
   <div class="wrapper">
-    @@include('html/header.html', {})
+    @@include('html/parts/header.html', {})
 
-    @@include('html/body.html', {})
+    @@include('html/parts/screen-1.html', {})
+
+    @@include('html/parts/screen-2.html', {})
     
-    @@include('html/footer.html', {})
+    @@include('html/parts/screen-3.html', {})
+    
+    @@include('html/parts/screen-4.html', {})
+
+    @@include('html/parts/screen-5.html', {})
+
+    @@include('html/parts/screen-6.html', {})
+
+    @@include('html/parts/screen-7.html', {})
+
+    @@include('html/parts/screen-8.html', {})
+    
+    @@include('html/parts/footer.html', {})
     <script src = "./js/app.min.js"></script>
   </div>
 </body>
