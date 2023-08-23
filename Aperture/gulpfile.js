@@ -12,6 +12,8 @@ import { otfToTtf, ttfToWoff, fontStyle } from "./gulp/task/fonts.js";
 import { svgSprive } from "./gulp/task/svgSprives.js";
 import { zip } from "./gulp/task/zip.js";
 import { ftp } from "./gulp/task/ftp.js";
+import { grid } from "./gulp/task/grid.js"
+// import { path } from "path";
 
 global.app = {
     isDev : process.argv.includes('--dev'),
@@ -26,7 +28,9 @@ function watcher(){
     gulp.watch(path.watch.html, html);
     gulp.watch(path.watch.style, styles);
     gulp.watch(path.watch.js, js);
+    gulp.watch('./gulp/config/smartGrid.js', grid);
 }
+
 
 export { svgSprive };
 
@@ -41,6 +45,8 @@ export { dev };
 export { build };
 export { deployZIP };
 export { deployFTP };
+export { grid };
 
 
 gulp.task('default', dev);
+// gulp.task('grid', grid);
