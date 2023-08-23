@@ -1,33 +1,37 @@
 @import (less) "../../node_modules/reset-css/less/reset.less";
-@import (less) "smart-grid.less";
+@import  "smart-grid.less";
 
-.wrapper{
-    .wrapper();
+.container{
+   max-width: 1600px;
 }
+.container{
+    .wrapper();
+
+    border: 1px solid #fa7070;
+
+
+}
+
+
+
 .debugGrid{
-    .debug(rgba(0, 0, 0, 0.5), 1px solid rgb(0, 237, 154));
+    .debug(rgba(0, 0, 0, 0.2), 1px solid rgba(0, 237, 154, 0.5));
     pointer-events: none;
 }
 
-@import (less) "parts/components/parts.less";
-@import (less) "parts/header.less";
+@import  "parts/components/parts.less";
+@import  "parts/header.less";
+@import  "parts/screen-1.less";
+@import  "parts/screen-2.less";
+@import  "parts/screen-3.less";
+@import  "parts/screen-4.less";
+@import  "parts/screen-5.less";
+@import  "parts/screen-6.less";
+@import  "parts/screen-7.less";
+@import  "parts/screen-8.less";
+@import  "parts/footer.less";
+@import  "fonts.less";
 
-@import (less) "parts/screen-1.less";
 
-@import (less) "parts/screen-2.less";
 
-@import (less) "parts/screen-3.less";
-
-@import (less) "parts/screen-4.less";
-
-@import (less) "parts/screen-5.less";
-
-@import (less) "parts/screen-6.less";
-
-@import (less) "parts/screen-7.less";
-
-@import (less) "parts/screen-8.less";
-
-@import (less) "parts/footer.less";
-
-@import (less) "fonts.less";
+@import "test_grid.less";

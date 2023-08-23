@@ -1,9 +1,11 @@
 export const settings= {
-    columns: 12,
+    // columns: 12,
+    columns: 16,
     offset: '15px',
     container: {
-        maxWidth: '1140px',
-        fields: '130px',
+        // maxWidth: '1140px',
+        maxWidth: '1440px',
+        fields: '170px',
     },
     breakPoints: {
         md: {
