@@ -1,12 +1,14 @@
 .wrapper_screen-2{
     max-width: 1400px;
     margin: 0 auto;
-    background-color: #2daca2;
+    background-color: #000000;
+    z-index: -2;
     min-height: 90px;
     .wrapper();
 }
 .screen-2{
-    background-color: #2daca2;
+    // background-color: #000000;
+    z-index: -2;
     box-sizing: border-box;
     min-height: 1560px;
     padding: 120px 0 100px 0;
@@ -16,10 +18,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 .screen-2-content-info{
     height: 82px;
-    display: flex;
+    .row-flex();
+    flex-wrap: nowrap;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
@@ -28,40 +32,58 @@
     font-family: Poppins;
 }
 .screen-2-content-title{
+    .col();
     color: #FFF;
     font-size: 40px;
     line-height: 42px;
 }
 .screen-2-content-subtitle{
+    .col();
     color: #C0C0C0;
     font-size: 23px;
     line-height: 30px; 
+    margin-bottom: 40px;
 }
 .screen-2-content-images{
     // display: flex;
-    max-width: 1180px;
+    // max-width: 1180px;
     // flex-wrap: wrap;
-    // justify-content: space-between;
     // margin: 0 auto;
     .row-flex();
+    justify-content: space-between;
     .to(1215px, {
         justify-content: center;
     });
 }
 .screen-2-content-images-item{
-    .col();
     .size(6);
+    .col();
     box-sizing: border-box;
     padding: 30px;
-    background-color: #216f41;
+    // background-color: #216f41;
+    &:nth-child(1){
+        background: url('../../img/image-1.jpg') 0 0/100% 100% no-repeat;  
+    };
+    &:nth-child(2){
+        background: url('../../img/image-2.jpg') 0 0/100% 100% no-repeat;  
+    };    
+    &:nth-child(3){
+        background: url('../../img/image-3.jpg') 0 0/100% 100% no-repeat;  
+    };    
+    &:nth-child(4){
+        background: url('../../img/image-4.jpg') 0 0/100% 100% no-repeat;  
+    };
     height: 600px;
-    max-width: 580px;
     margin-bottom: 16px;
     display: flex;
     align-items: end;
     font-style: normal;
     font-size: 14px;
     font-weight: 400;
+    &:hover{
+        transition-duration: 0.5s;
+        transform: scale(1.1);
+    }
     .to(1215px, {
         .size(9);
     });
@@ -85,7 +107,16 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-
+    &:hover{
+        cursor: pointer;
+    }
+    &:hover .screen-2-content-images-item-button-circle{
+        transition-duration: 0.7s;
+        background: #919191;
+    }
+}
+.screen-2-content-images-item-content{
+    z-index: 1;
 }
 .screen-2-content-images-item-button-circle{
     width: 32px;

@@ -1,12 +1,15 @@
 .wrapper_screen-1{
     max-width: 1400px;
     margin: 0 auto;
-    background-color: #b06161;
     min-height: 90px;
     .wrapper();
+    background: url('../../img/background-screen-1.jpg') 0 0/100% 100% no-repeat;  
+}
+.screen-img{
+    position: absolute;
+    z-index: -1;
 }
 .screen-1{
-    background-color: #b06161;
     box-sizing: border-box;
     height: 645px;
     
@@ -26,12 +29,12 @@
     line-height: 20px; /* 142.857% */
     margin-bottom: 15px;
 }
+.screen-1-content-text{
+    .size(6.5);
+}
 .screen-1-subtitle{
     letter-spacing: 2px;
     text-transform: uppercase;
-}
-.screen-1-text{
-    max-width: 580px;
 }
 h1{
     color: #FFF;

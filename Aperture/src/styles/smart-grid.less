@@ -1,28 +1,32 @@
-@columns: 16;
+@columns: 12;
 @atom: (100% / @columns);
 
 @break_md: 992px;
+@break_lsm: 860px;
 @break_sm: 720px;
 @break_xs: 576px;
 @break_xss: 380px;
 
 @offset: 15px;
 @offset_md: @offset;
+@offset_lsm: @offset;
 @offset_sm: @offset;
 @offset_xs: @offset;
 @offset_xss: @offset;
 
 @offset_one_side: (@offset / 2);
 @offset_md_one_side: (@offset_md / 2);
+@offset_lsm_one_side: (@offset_lsm / 2);
 @offset_sm_one_side: (@offset_sm / 2);
 @offset_xs_one_side: (@offset_xs / 2);
 @offset_xss_one_side: (@offset_xss / 2);
 
-@fields: 170px;
-@fields_md: 20px;
-@fields_sm: 10px;
-@fields_xs: 5px;
-@fields_xss: 5px;
+@fields: 130px;
+@fields_md: 70px;
+@fields_lsm: 65px;
+@fields_sm: 50px;
+@fields_xs: 25px;
+@fields_xss: 10px;
 
 .wrapper-full(){
     padding-left: @fields;
@@ -31,6 +35,11 @@
     .md-block({
         padding-left: @fields_md;
         padding-right: @fields_md;
+    });
+
+    .lsm-block({
+        padding-left: @fields_lsm;
+        padding-right: @fields_lsm;
     });
 
     .sm-block({
@@ -110,6 +119,11 @@
     .md(width, ~"calc(@{val} - @{offset_md})");
 }
 
+.size-lsm(@n){
+    @val: 100% / @columns * @n;
+    .lsm(width, ~"calc(@{val} - @{offset_lsm})");
+}
+
 .size-sm(@n){
     @val: 100% / @columns * @n;
     .sm(width, ~"calc(@{val} - @{offset_sm})");
@@ -187,6 +201,38 @@
 .shift-md-padding-right(@n){
     @val: 100% / @columns * @n;
     .md(padding-right, ~"calc(@{val} + @{offset_md_one_side})");
+}
+
+.shift-lsm(@n){
+    @val: 100% / @columns * @n;
+    .lsm(margin-left, ~"calc(@{val} + @{offset_lsm_one_side})");
+    .lsm(margin-right, ~"calc(@{val} + @{offset_lsm_one_side})");
+}
+
+.shift-lsm-left(@n){
+    @val: 100% / @columns * @n;
+    .lsm(margin-left, ~"calc(@{val} + @{offset_lsm_one_side})");
+}
+
+.shift-lsm-right(@n){
+    @val: 100% / @columns * @n;
+    .lsm(margin-right, ~"calc(@{val} + @{offset_lsm_one_side})");
+}
+
+.shift-lsm-padding(@n){
+    @val: 100% / @columns * @n;
+    .lsm(padding-left, ~"calc(@{val} + @{offset_lsm_one_side})");
+    .lsm(padding-right, ~"calc(@{val} + @{offset_lsm_one_side})");
+}
+
+.shift-lsm-padding-left(@n){
+    @val: 100% / @columns * @n;
+    .lsm(padding-left, ~"calc(@{val} + @{offset_lsm_one_side})");
+}
+
+.shift-lsm-padding-right(@n){
+    @val: 100% / @columns * @n;
+    .lsm(padding-right, ~"calc(@{val} + @{offset_lsm_one_side})");
 }
 
 .shift-sm(@n){
@@ -293,6 +339,18 @@
 
 .md-block(@content){
     @media screen and (max-width: @break_md){
+        @content();
+    }
+}
+
+.lsm(@name, @value){
+    @media screen and (max-width: @break_lsm){
+        @{name}: @value;
+    }
+}
+
+.lsm-block(@content){
+    @media screen and (max-width: @break_lsm){
         @content();
     }
 }

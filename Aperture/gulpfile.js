@@ -25,9 +25,10 @@ global.app = {
 
 function watcher(){
     gulp.watch(path.watch.files, copy);
-    gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.html, gulp.parallel(html, images));
     gulp.watch(path.watch.style, styles);
     gulp.watch(path.watch.js, js);
+    gulp.watch(path.watch.images, images);
     gulp.watch('./gulp/config/smartGrid.js', grid);
 }
 
